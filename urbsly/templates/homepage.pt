@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>urbsly, made with Ptah!</title>
+    <title>Urbsly, made with Ptah!</title>
     ${structure: view.rendered_includes}
     <link type="text/css" rel="stylesheet"
           href="${request.static_url('urbsly:static/app.css')}" />
@@ -36,8 +36,8 @@
       </div>
       <div class="content">
         <div class="hero-unit">
-          <h1>Welcome to urbsly!</h1>
-          <p>The urbsly application uses Ptah, a modern web publishing framework.
+          <h1>Welcome to Urbsly!</h1>
+          <p>The <a href="http://urbsly.com">Urbsly</a> application uses Ptah, a modern web publishing framework.
           </p>
           <p>
             <a class="btn btn-primary btn-large" href="/ptah-manage/">Goto Ptah Manage UI &raquo;</a>
