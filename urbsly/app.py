@@ -17,7 +17,6 @@ def main(global_config, **settings):
 
     durl = os.environ.get("DATABASE_URL")
     settings['sqlalchemy.url']=durl
-    print os.environ
     config = Configurator(settings=settings,
                           session_factory = session_factory,
                           authentication_policy = auth_policy)
