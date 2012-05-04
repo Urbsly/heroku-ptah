@@ -1,3 +1,5 @@
+import os
+
 import ptah
 from pyramid.config import Configurator
 from pyramid.asset import abspath_from_asset_spec
@@ -12,6 +14,9 @@ def main(global_config, **settings):
     """ Function which returns a configured Pyramid/Ptah WSIG Application """
 
     # Info: This is how Pyramid is configured.
+
+    durl = os.environ.get("DATABASE_URL")
+    settings['sqlalchemy.url']=durl
     config = Configurator(settings=settings,
                           session_factory = session_factory,
                           authentication_policy = auth_policy)
