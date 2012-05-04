@@ -17,8 +17,13 @@ $ heroku open
 Ideally, you would have forked the repository first, and so checked out a
 writible clone in step five instead of a read-only copy.
 
-Note: this code won't run on your local machine as is. A bit more cleanup is
-still needed.
+To run this code locally, do the following in newapp/heroku-ptah:
+
+$ pip install -r localrequirements.txt
+$ python setup.py develop
+$ ../venv/bin/pserve settings.ini --reload
+
+Note: If you are having trouble 
 
 Changes made to this skeleton from the default ptah_starter:
 

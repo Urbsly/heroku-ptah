@@ -16,7 +16,8 @@ def main(global_config, **settings):
     # Info: This is how Pyramid is configured.
 
     durl = os.environ.get("DATABASE_URL")
-    settings['sqlalchemy.url']=durl
+    if durl:
+        settings['sqlalchemy.url']=durl
     config = Configurator(settings=settings,
                           session_factory = session_factory,
                           authentication_policy = auth_policy)
