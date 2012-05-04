@@ -1,6 +1,5 @@
 To deploy this app on Heroku, do the following:
 
-
 Install Heroku Toolbelt: https://toolbelt.herokuapp.com/
 
 $ mkdir newapp
@@ -15,6 +14,27 @@ $ git push heroku master
 $ heroku ps:scale web=1
 $ heroku open
 
-Ideally, you would have forked the repository first, and so checked out a writible clone in step five instead of a read-only copy.
+Ideally, you would have forked the repository first, and so checked out a
+writible clone in step five instead of a read-only copy.
 
-Note: this code won't run on your local machine as is. A bit more cleanup is still needed.
+Note: this code won't run on your local machine as is. A bit more cleanup is
+still needed.
+
+Changes made to this skeleton from the default ptah_starter:
+
+1. Procfile added to tell Heroku what to run upon deployment to start the web
+   service.
+
+2. run bash script that causes Heroku to develop then run the app.
+
+3. runapp.py that actually runs the app under waitress.
+
+4. requirements.txt informs Heroku what the dependencies are. Dependencies
+   added from the stock ptah_starter are waitress and psycopg2.
+
+5. Heroku doesn't support SQLite, so a small change was required to get Ptah
+   to work with the shared postgres db that Heroku provisions. Heroku provides
+   the DB connection string as the environment variable DATABASE_URL (if the
+   database is a shared database, it is also available as SHARED_DATABASE_URL).
+   app.py has been modified to use this string to override the sqlalchemy.url
+   parameter from settings.ini before the settings are applied.
