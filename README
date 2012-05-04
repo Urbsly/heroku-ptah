@@ -1,0 +1,20 @@
+To deploy this app on Heroku, do the following:
+
+
+Install Heroku Toolbelt: https://toolbelt.herokuapp.com/
+
+$ mkdir newapp
+$ cd newapp
+$ virtualenv venv --distribute --no-site-packages
+$ source venv/bin/activate
+$ git clone git://github.com/Urbsly/heroku-ptah.git
+$ cd heroku-ptah
+$ heroku create --stack cedar
+$ heroku addons:add shared-database
+$ git push heroku master
+$ heroku ps:scale web=1
+$ heroku open
+
+Ideally, you would have forked the repository first, and so checked out a writible clone in step five instead of a read-only copy.
+
+Note: this code won't run on your local machine as is. A bit more cleanup is still needed.
